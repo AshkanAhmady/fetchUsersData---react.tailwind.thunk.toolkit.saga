@@ -16,17 +16,23 @@ const UsersList = () => {
     if (error) return <p>{error}</p>;
     if (data) {
       return (
-        <div className="usersrList">
-          <h1>users list</h1>
-          {data.map((user) => {
-            return <span key={user.name}>{user.name}</span>;
-          })}
+        <div className="usersrList flex flex-col justify-center items-center w-full gap-3">
+          <h1 className="text-2xl font-bold my-3">users list</h1>
+          <div className="flex max-w-2xl border p-2 justify-start shadow-md gap-2 flex-wrap">
+            {data.map((user) => {
+              return (
+                <span className="bg-gray-200 p-2" key={user.name}>
+                  {user.name}
+                </span>
+              );
+            })}
+          </div>
         </div>
       );
     }
   };
 
-  return <div>{renderUsers()}</div>;
+  return <div className="w-full">{renderUsers()}</div>;
 };
 
 export default UsersList;
