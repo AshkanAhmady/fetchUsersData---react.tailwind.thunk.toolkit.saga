@@ -12,7 +12,19 @@ const UsersList = () => {
   }, []);
 
   const renderUsers = () => {
-    if (loading) return <p>loading ...</p>;
+    if (loading)
+      return (
+        <div class="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      );
     if (error) return <p>{error}</p>;
     if (data) {
       return (

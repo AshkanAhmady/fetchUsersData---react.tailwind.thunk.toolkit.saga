@@ -25,7 +25,6 @@ const initialState = {
 const userSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
   extraReducers: {
     //   to have a dinamic property, we use backet
     [fetchUsers.pending]: (state, action) => {
