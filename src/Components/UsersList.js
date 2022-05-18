@@ -14,7 +14,7 @@ const UsersList = () => {
   const renderUsers = () => {
     if (loading)
       return (
-        <div class="lds-roller">
+        <div className="lds-roller">
           <div></div>
           <div></div>
           <div></div>
@@ -30,7 +30,7 @@ const UsersList = () => {
       return (
         <div className="usersrList flex flex-col justify-center items-center w-full gap-3">
           <h1 className="text-2xl font-bold my-3">users list</h1>
-          <div className="flex max-w-2xl border p-2 justify-start shadow-md gap-2 flex-wrap">
+          <div className=" w-4/5 md:w-1/2 border p-2 grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] shadow-md gap-2 flex-wrap">
             {data.map((user) => {
               return (
                 <span className="bg-gray-200 p-2 select-none" key={user.name}>
