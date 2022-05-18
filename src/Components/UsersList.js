@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../Redux/users/userAction";
+import { fetchUsers } from "../Features/users/userSlice";
 
 const UsersList = () => {
-  const { loading, data, error } = useSelector((state) => state);
+  const { loading, data, error } = useSelector((state) => state.users);
 
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ const UsersList = () => {
           <div className="flex max-w-2xl border p-2 justify-start shadow-md gap-2 flex-wrap">
             {data.map((user) => {
               return (
-                <span className="bg-gray-200 p-2" key={user.name}>
+                <span className="bg-gray-200 p-2 select-none" key={user.name}>
                   {user.name}
                 </span>
               );
