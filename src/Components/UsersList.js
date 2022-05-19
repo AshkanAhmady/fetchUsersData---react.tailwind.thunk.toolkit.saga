@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../Features/users/userSlice";
+import { fetchUsersRequest } from "../Redux/users/userAction";
 
 const UsersList = () => {
-  const { loading, data, error } = useSelector((state) => state.users);
+  const { loading, data, error } = useSelector((state) => state);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUsers());
+    dispatch(fetchUsersRequest());
   }, []);
 
   const renderUsers = () => {
